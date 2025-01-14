@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    color: white;
+}
+
+h2, h3 {
+    text-align: center;
+    padding: 1rem;
+    border-bottom: 3px solid rgb(49, 218, 244);
+    border-radius: .5rem;
+}
+
+body {
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    height: 8rem;
+    background-color: black;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-evenly;
+}
+
+li {
+    list-style-type: none;
+    padding: 0 1rem;
+}
+
+button {
+    background-color: rgb(52, 151, 184);
+    color: white;
+    padding: .75rem 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    margin-top: 2.5rem;
+    cursor: pointer;
+}
+
+.active-nav-btn {
+    padding-bottom: 4rem;
+    border-bottom-right-radius: 0rem;
+    border-bottom-left-radius: 0rem;
+}
+
+#content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.div-box {
+    margin: 2rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    max-width: 75vw;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background: hsla(199, 24%, 15%, 0.8);
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.food-pic {
+    height: 16rem;
+    width: 26rem;
+    border-radius: 2rem;
+    border: white 10px solid;
+}
+
+#intro-message {
+    height: 12rem;
+    padding: 4rem;
+}
+
+#truffle-burger-box {
+    padding: 4rem;
+}
+
+#truffle-salad-box {
+    padding: 4rem;
+    margin-bottom: 2rem;
+}
+
+/* menu tab */
+
+#menu-box {
+    min-height: 50vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#menu {
+    padding: 2rem;
+}
+
+#contact-box {
+    min-height: 80vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 25rem;
+    padding: 2rem 1.5rem;
+    border: 3px solid rgb(17, 147, 167);
+    margin: 2rem 0;
+    background-color: lightblue;
+    border-radius: .5rem;
+}
+
+.menu-item p {
+    font-size: 1rem;
+}
+
+.menu-item h4 {
+    font-size: 1.2rem;
+}
+
+.contact-person {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20rem;
+    padding: 2rem 1.5rem;
+    border: 3px solid rgb(17, 147, 167);
+    margin: 2rem 0;
+    background-color: lightblue;
+    border-radius: .5rem;
+}
+
+.contact-person p {
+    font-size: 1rem;
+}
+
+.contact-person h4 {
+    font-size: 1.2rem;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+}
