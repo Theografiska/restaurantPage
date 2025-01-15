@@ -17,6 +17,10 @@ const loadHome = () => {
     introMessage.textContent = "A seriously good place to dine. And eat truffles.";
     introMessage.style.padding = "5rem 10rem";
     contentSection.appendChild(introMessage);
+
+    const featuredOptions = document.createElement("div");
+    featuredOptions.id = "featured-options";
+    contentSection.appendChild(featuredOptions);
     
     const dailyOptionOne = document.createElement("div");
     dailyOptionOne.className = "div-box";
@@ -26,7 +30,7 @@ const loadHome = () => {
     truffleBurgImage.src = truffleBurger;
     truffleBurgImage.className = "food-pic";
     dailyOptionOne.appendChild(truffleBurgImage);
-    contentSection.appendChild(dailyOptionOne);
+    featuredOptions.appendChild(dailyOptionOne);
     
     const dailyOptionTwo = document.createElement("div");
     dailyOptionTwo.className = "div-box";
@@ -36,7 +40,7 @@ const loadHome = () => {
     truffleSaladImage.src = truffleSalad;
     truffleSaladImage.className = "food-pic";
     dailyOptionTwo.appendChild(truffleSaladImage);
-    contentSection.appendChild(dailyOptionTwo);   
+    featuredOptions.appendChild(dailyOptionTwo);   
     
     homeButton.className = "active-nav-btn";
 }

@@ -1,5 +1,4 @@
 const contentSection = document.querySelector("#content");
-
 const menuButton = document.querySelector("#menu-btn");
 
 const loadMenu = () => {
@@ -7,11 +6,30 @@ const loadMenu = () => {
     menuBox.className = "div-box";
     menuBox.id = "menu-box";
 
+    // add menu item function
+    const addItem = (name, price, itemClass) => {
+        const item = document.createElement("div");
+        item.className = `${itemClass}`;
+        const itemName = document.createElement("h4");
+        itemName.textContent = `${name}`;
+        item.appendChild(itemName);
+        const itemPrice = document.createElement("p");
+        itemPrice.textContent = `${price}`;
+        item.appendChild(itemPrice);
+        menuItself.appendChild(item);
+    }
+
+    // add a heading function
+    const addHeading = (headerNumber, title) => {
+        const heading = document.createElement(`${headerNumber}`);
+        heading.textContent = `${title}`;
+        menuItself.appendChild(heading);
+    }
+
     // main menu heading
     const menuHeading = document.createElement("h2");
     menuHeading.textContent = "Menu";
-    menuHeading.style.marginBottom = "4rem";
-    menuHeading.style.width = "30rem";
+    menuHeading.style.width = "40rem";
     menuBox.appendChild(menuHeading);
 
     // main menu content goes here:
@@ -20,81 +38,23 @@ const loadMenu = () => {
     menuBox.appendChild(menuItself);
 
     // appetizers section
-    const appetizersHeading = document.createElement("h3");
-    appetizersHeading.textContent = "Appetizers";
-    menuItself.appendChild(appetizersHeading);
+    addHeading("h3", "Appetizers");
 
-    // truffle bruschetta
-    const truffleBruschetta = document.createElement("div");
-    truffleBruschetta.className = "menu-item";
-
-    const truffleBruschettaName = document.createElement("h4");
-    truffleBruschettaName.textContent = "Truffle Bruschetta";
-    truffleBruschetta.appendChild(truffleBruschettaName);
-
-    const truffleBruschettaPrice = document.createElement("p");
-    truffleBruschettaPrice.textContent = "8€";
-    truffleBruschetta.appendChild(truffleBruschettaPrice);
-
-    menuItself.appendChild(truffleBruschetta);
-
-    // truffle chips
-    const truffleChips = document.createElement("div");
-    truffleChips.className = "menu-item";
-
-    const truffleChipsName = document.createElement("h4");
-    truffleChipsName.textContent = "Truffle Chips";
-    truffleChips.appendChild(truffleChipsName);
-    const truffleChipsPrice = document.createElement("p");
-    truffleChipsPrice.textContent = "6€";
-    truffleChips.appendChild(truffleChipsPrice);
-
-    menuItself.appendChild(truffleChips);
-
-     // truffle salad
-     const truffleSalad = document.createElement("div");
-     truffleSalad.className = "menu-item";
- 
-     const truffleSaladName = document.createElement("h4");
-     truffleSaladName.textContent = "Truffle Salad";
-     truffleSalad.appendChild(truffleSaladName);
-     const truffleSaladPrice = document.createElement("p");
-     truffleSaladPrice.textContent = "11€";
-     truffleSalad.appendChild(truffleSaladPrice);
- 
-     menuItself.appendChild(truffleSalad);
+    addItem("Truffle Bruschetta", "8€", "menu-item");
+    addItem("Truffle Chips", "6€", "menu-item");
+    addItem("Truffle Salad", "11€", "menu-item");
 
     // main courses section
+    addHeading("h3", "Main Courses");
 
-    const mainCourseHeading = document.createElement("h3");
-    mainCourseHeading.textContent = "Main Courses";
-    menuItself.appendChild(mainCourseHeading);
+    addItem("Truffle Burger", "17€", "menu-item");
+    addItem("Truffle Steak", "24€", "menu-item");
 
-    // truffle burger
-    const truffleBurger = document.createElement("div");
-    truffleBurger.className = "menu-item";
+    // desserts section
+    addHeading("h3", "Desserts");
 
-    const truffleBurgerName = document.createElement("h4");
-    truffleBurgerName.textContent = "Truffle Burger";
-    truffleBurger.appendChild(truffleBurgerName);
-    const truffleBurgerPrice = document.createElement("p");
-    truffleBurgerPrice.textContent = "17€";
-    truffleBurger.appendChild(truffleBurgerPrice);
+    addItem("Truffle Ice Cream", "10€", "menu-item");
 
-    menuItself.appendChild(truffleBurger);
-
-    // truffle steak
-    const truffleSteak = document.createElement("div");
-    truffleSteak.className = "menu-item";
-
-    const truffleSteakName = document.createElement("h4");
-    truffleSteakName.textContent = "Truffle Steak";
-    truffleSteak.appendChild(truffleSteakName);
-    const truffleSteakPrice = document.createElement("p");
-    truffleSteakPrice.textContent = "24€";
-    truffleSteak.appendChild(truffleSteakPrice);
-
-    menuItself.appendChild(truffleSteak);
 
     contentSection.appendChild(menuBox);
 }
@@ -116,4 +76,4 @@ const clickMenuBtn = () => {
     loadMenu();
 }
 
-export { loadMenu, clickMenuBtn};
+export { loadMenu, clickMenuBtn };

@@ -7,11 +7,37 @@ const loadContact = () => {
     contactBox.className = "div-box";
     contactBox.id = "contact-box";
 
+    // add new contact person function
+    const addPerson = (contactPerson, job, number, className) => {
+        const person = document.createElement("div");
+        person.className = `${className}`;
+
+        const personName = document.createElement("h4");
+        personName.textContent = `${contactPerson}`;
+        person.appendChild(personName);
+
+        const personJob = document.createElement("p");
+        personJob.textContent = `${job}`;
+        person.appendChild(personJob);
+
+        const personNumber = document.createElement("p");
+        personNumber.textContent = `${number}`;
+        person.appendChild(personNumber);
+
+        contactItself.appendChild(person);
+    }
+
+    // add a heading function
+    const addHeading = (headerNumber, title) => {
+        const heading = document.createElement(`${headerNumber}`);
+        heading.textContent = `${title}`;
+        contactItself.appendChild(heading);
+    }
+
     // main contact heading
     const contactHeading = document.createElement("h2");
     contactHeading.textContent = "Contact";
-    contactHeading.style.marginBottom = "4rem";
-    contactHeading.style.width = "30rem";
+    contactHeading.style.width = "40rem";
 
     contactBox.appendChild(contactHeading);
 
@@ -21,19 +47,21 @@ const loadContact = () => {
     contactItself.id = "contact";
     contactBox.appendChild(contactItself);
 
-    // Head chef
-    const headChef = document.createElement("div");
-    headChef.className = "contact-person";
+    // "Admin" section
+    addHeading("h3", "Administration");
 
-    const headChefName = document.createElement("h4");
-    headChefName.textContent = "Truflito Truflato";
-    headChef.appendChild(headChefName);
+    addPerson("Justin Gags", "CEO", "+271 6622 9100", "contact-person");
 
-    const headChefNumber = document.createElement("p");
-    headChefNumber.textContent = "+372 5159-5960";
-    headChef.appendChild(headChefNumber);
+    // "Kitchen" section
+    addHeading("h3", "Kitchen");
 
-    contactItself.appendChild(headChef);
+    addPerson("Trufflito Trufflato", "Head Chef", "+271 5020 3300", "contact-person");
+    addPerson("Truslana Truffles", "Sous Chef", "+271 1129 8556", "contact-person");
+
+    // "Bar" section
+    addHeading("h3", "Bar");
+    addPerson("Martin Stokes", "Head Mixologist", "+271 5522 0011", "contact-person");
+
 
     contentSection.appendChild(contactBox);
 }
@@ -55,4 +83,4 @@ const clickContactBtn = () => {
     loadContact();
 }
 
-export { loadContact, clickContactBtn};
+export { loadContact, clickContactBtn };
