@@ -4,6 +4,7 @@ This project showcases a simple restaurant website built as part of an assignmen
 
 A live version of the project: https://theografiska.github.io/restaurantPage/
 
+![Screenshot of the product](assets/screenshot.png)
 
 Below are the highlights of the project:
 
@@ -57,9 +58,6 @@ Below are the highlights of the project:
      git subtree push --prefix dist origin gh-pages
      ```
    - Updated the GitHub Pages source branch to `gh-pages` in repository settings.
-
----
-
 
 ---
 
